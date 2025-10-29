@@ -1,0 +1,819 @@
+---
+title: "Dating the Quaternary"
+subtitle: "Bio250"
+author: "Richard J. Telford"
+date: today
+date-format: "D MMMM YYYY"
+format: 
+  revealjs:
+    css: css/style.css
+    theme: [default]
+    chalkboard: true
+    self_contained: true
+---
+
+## Why date? {background-image="/figures/pollen-strat.jpg" background-size="contain"}
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(patchwork)
+# library(rbacon)
+library(ggtext)
+library(rintcal)
+library(rvest)
+library(xml2)
+
+# set default theme
+theme_set(theme_bw(base_size = 17))
+```
+
+::::::: columns
+:::: {.column .fragment}
+::: rounded-div
+Without dates:
+
+-   Things changed
+-   Order of events
+:::
+::::
+
+:::: {.column .fragment}
+::: rounded-div
+With dates:
+
+-   When?
+-   How fast?
+-   What happened at the same time?
+-   Hypothesis testing
+:::
+::::
+:::::::
+
+
+
+## Introduction
+
+Absolute chronology is the basis for all comparison and correlation of Holocene proxy records.
+
+Avoid visual 'curve-matching'
+
+-   'reinforcement syndrome'
+
+-   'suck-in and smear'
+
+-   Mostly <sup>14</sup>C dating and <sup>210</sup>Pb dating.
+
+-   Tephras increasingly important.
+
+-   Holocene-length annually laminated sediments rare.
+
+## Types of chronologies
+
+Relative vs Absolute
+
+-   Incremental
+
+    -   Varved sediments
+
+. . .
+
+-   Radiometric
+
+    -   Radiocarbon
+    -   Lead-210
+
+. . .
+
+-   Stratigraphic
+
+    -   Tephra layers
+
+## [Varved Lake Sediments]{style="color: white"} {background-image="/figures/de_geer.jpeg"}
+
+::: {.rounded-div .narrow .fragment}
+-   How are they formed & preserved?
+-   What types of lakes have varved sediments?
+-   Techniques
+-   Can they be proved to be annual?
+:::
+
+## Varve formation and preservation {background-image="figures/geol_deglac8.jpg"}
+
+::: indent-div
+1 Seasonal variation in the type of sediment deposited
+
+-   grain size in pro-glacial lake
+-   biological remains
+-   calcite
+
+2 Sediment water interface undisturbed
+
+-   by waves & currents
+-   by bioturbation
+-   by slumping
+:::
+
+## [Sagtjennet, Norway]{style="color: white;"} {background-image="figures/Sagtjennet_organic-macro.jpg"}
+
+<!-- ??? -->
+
+<!-- http://www.pages.unibe.ch/download/docs/meeting-products/abstracts/VWG_AbstractVolume_Final_2012.pdf -->
+
+## Lake Characteristics
+
+<img src="figures/varves-morpho.png"/>
+
+## Varves in Marine Environments
+
+::::: columns
+::: column
+Common in enclosed marginal seas
+
+-   Saanich Inlet, British Columbia
+-   Baltic Sea
+-   Black Sea
+-   Cariaco Basin
+-   Also under up-welling zones
+:::
+
+::: column
+```{r}
+#| fig-cap: Cariaco Basin greyscale for the deglaciation. Hugen et al 2004
+knitr::include_graphics("figures/Cariaco-Basin-grayscale-for-the-last-deglaciation-plotted-versus-old-and-newly-revised_W640.jpg")
+```
+
+Why not in most of the ocean?
+:::
+:::::
+
+## Techniques
+
+Coring – need continuous sequence
+
+Frozen finger to sample sediment water interface
+
+Embed in epoxy resin to make thin sections
+
+<!-- background-image: url("figures/bald-core.jpg") -->
+
+<!-- background-position: right -->
+
+<!-- ## Evidence that Varves are Annual -->
+
+## Evidence that varves are annual {background-image="figures/microstratigraphy.jpg" background-size="contain" background-position="right"}
+
+Radiometric dates
+
+Pollen
+
+Microstratigraphy
+
+## Baldeggersee, Switzerland {background-image="figures/bald-core.jpg" background-size="contain" background-position="right"}
+
+Hypertrophic lake
+
+Cored with freeze-corer
+
+Diatoms counted at\
+annual resolution
+
+## Baldeggersee, Switzerland {background-image="figures/bald-diatoms.png" background-size="contain"}
+
+# Radiocarbon Dating
+
+## <sup>14</sup>C Principles
+
+:::: columns
+::: {.column width="40%"}
+<img src="figures/Libby.jpg"/>
+
+Developed by Libby
+
+:::
+
+::: {.column width = "60%"}
+
+98.9% of carbon atoms have nucleus with 6 protons and 6 neutrons: <sup>12</sup>C
+
+1.1% have 6 protons, 7 neutrons: <sup>13</sup>C
+
+<sup>12</sup>C & <sup>13</sup>C are stable
+
+<sup>14</sup>C: 1 in 10<sup>12</sup> atoms
+
+-   8 neutrons
+-   radioactive
+-   half-life of 5730 years
+
+Can date organics and carbonates
+
+::: 
+::::
+
+<!-- Photo from -->
+
+<!-- https://enciklopedija.hr/natuknica.aspx?ID=36340 -->
+
+## Origin of <sup>14</sup>C
+
+-   Cosmic radiation hits upper atmosphere
+-   Nuclei broken into high-energy nucleotides
+-   <sup>14</sup>C formed by exchange of p for n in Nitrogen atom
+-   <sup>14</sup>C absorbed by biomass and moves through the food chain
+
+Everything is radioactive
+
+## Beta decay of <sup>14</sup>C
+
+$^{14}C \longrightarrow  {^{14}N} + β + \bar{v}_e$
+
+β – Beta-particle – high energy electron
+
+$\bar{v}_e$ electron antineutrino – very difficult to detect
+
+-   Random process
+
+-   Atom has 50% chance of decaying in one half-life
+
+-   Exponential decay
+
+## Measuring <sup>14</sup>C
+
+1 Count the disintegrations
+
+-   Detect β particles
+-   Radiometric or bulk date
+-   Needs 1 g carbon
+
+2 Count the atoms
+
+-   Accelerated Mass Spectrometer
+-   Needs 1 mg carbon
+-   Can date specific sediment fractions
+
+## Calculating <sup>14</sup>C Age
+
+:::: columns
+::: column
+```{r halflives}
+
+halflives <- tibble(n = 1:5, activity = 1/(2^n), age = 5568 *n)
+
+tibble(age = seq(0, 50000, 200),
+       activity = exp(-log(2)*age/5568)) |> 
+  ggplot(aes(x = age, y = activity)) +
+  geom_line() +
+  geom_segment(data = halflives, aes(x = age, xend = 0, y = activity, yend = activity, colour = n), show.legend = FALSE) +
+  geom_segment(data = halflives, aes(x = age, xend = age, y = activity, yend = 0, colour = n), show.legend = FALSE) +
+  scale_colour_viridis_c() +
+  labs(x = "Years", y = "Proportion modern activity")
+
+```
+
+$\frac{dA}{dt} = -\lambda A$
+
+$A = A_{initial}e^{-\lambda t}$
+
+$\lambda = \frac{ln(2)}{halflife}$
+:::
+
+::: column
+$A = A_{initial}e^{-ln(2)\frac{age}{halflife}}$
+
+$ln(\frac{A}{A_{initial}})=-ln(2)\frac{age}{halflife}$
+
+$age = -ln(\frac{A}{A_{initial}})\frac{halflife}{ln(2)}$
+
+Use Libby halflife 5568
+
+$age = -8033 ln(\frac{A}{A_{initial}})$
+
+assume $A_{initial} = A_{modern}$
+
+$age= -8033 ln(\frac{A}{A_{modern}})$
+:::
+::::
+
+## Assumptions
+
+1 No contamination
+
+::::: columns
+::: column
+-   rootlets
+-   recrystallisation
+:::
+
+::: column
+-   bioturbation
+-   coal & peat
+:::
+:::::
+
+2 <sup>14</sup>C in organism is in equilibrium with atmosphere at death
+
+-   fractionation
+-   marine reservoir effect
+-   hardwater error
+
+3 Atmospheric <sup>14</sup>C concentration is constant
+
+## Isotopic fractionation
+
+:::: columns
+::: column
+<sup>14</sup>C is heavier & slower than <sup>12</sup>C
+
+-   discriminated against by photosynthesis
+
+-   <sup>13</sup>C also discriminated against
+
+-   normalise to $\delta ^{13}C = -25 ‰$
+
+-   16 yr offset per 1 ‰
+:::
+
+::: column
+| Material                    | $\delta ^{13}C ‰$ |
+|-----------------------------|-------------------|
+| Marine shells               | +1 ± 2            |
+| Speleothems                 | -9 ± 3            |
+| C-4 plants                  | -10 ± 2           |
+| Marine organics             | -15 ± 3           |
+| Submerged freshwater plants | -16 ± 4           |
+| C3 plants, wood             | -25 ± 3           |
+:::
+::::
+
+## Marine reservoir effect
+
+-   Ocean contains lots of C
+-   Exchange with atmosphere is slow
+-   <sup>14</sup>C decays before exchange
+-   →Average apparent age of marine organisms 400 yr too old
+
+## [What is the ^14^C age of these sheep?]{style="color: white"} {background-image="figures/Lofotlam_sau_spiser_tang_Røst_lofoten.jpg"}
+
+::: {.rounded-div .fragment .narrow}
+How could you tell that the dates were problematic?
+:::
+
+## Marine reservoir effect varies in space
+
+$\Delta R$ - offset from typical reservoir age <http://calib.org/marine/>
+
+```{r load-delta-14C, cache=TRUE, message = FALSE}
+
+delta14C <- read_html("data/CHRONO Marine Database.html") |> 
+  html_nodes("table") |> 
+  pluck(2) |> 
+  html_table(header = TRUE)
+
+```
+
+```{r}
+#| label: delta-14C-map
+#| fig-height: 10
+#| fig-width: 15
+
+gradient_setter <- function(x, low = NULL, mid = 0, high = NULL){
+  rn <- range(x, na.rm = TRUE)
+  (c(rn[1], low, mid, high, rn[2]) - rn[1])/(rn[2] - rn[1])
+}
+
+mp <- rnaturalearth::ne_countries()
+ggplot(delta14C) +
+  geom_sf(data = sf::st_graticule(crs = "+proj=robin +lon_0=0w"), colour = "grey85") +
+  geom_sf(data = mp, fill = "grey50", colour = "grey50") +
+  geom_point(aes(x = Lon, y = Lat, colour = DeltaR)) +
+  coord_sf(crs = "+proj=robin +lon_0=0w", default_crs = 4326) +
+  scale_colour_gradientn(colours = c("red", "grey80", "blue", "darkblue"), values = gradient_setter(delta14C$DeltaR, high = 500)) +
+  labs(x = "°E", y = "°N", colour = expression(Delta*R~yr)) +
+  ggthemes::theme_map(base_size = 17) +
+  theme(panel.grid = element_line())
+```
+
+## And varies in time
+
+:::: columns
+::: column
+<img src="figures/bondevik_2006_core.png"/>
+
+-   Marine and terrestrial macrofossils in same core
+
+-   Difference between marine & terrestrial <sup>14</sup>C dates varies
+:::
+
+::: column
+```{r}
+#| label: bondevik2006-results2
+#| out-height: 550px
+#| out-width: 400px
+#| fig-cap: "[Bondevik et al (2006) Science](https://science.sciencemag.org/content/312/5779/1514)"
+
+knitr::include_graphics("figures/Bondevik_2006_results2.jpg")
+```
+:::
+::::
+
+## Hard-water error
+
+-   Catchment carbonates (e.g. chalk, limestone) dissolve
+-   Rock is millions of years old - no ^14^C
+-   Aquatic plants photosynthesise using “old” carbon
+-   Apparent age older than true age
+-   Solve by dating terrestrial macrofossils or pollen
+
+## Is atmospheric <sup>14</sup>C concentration constant?
+
+:::: columns
+::: column
+<img src="figures/Curve_knowns.gif"/>
+
+"Curve of Knowns" Libby and Arnold (1949)
+:::
+
+::: column
+-   First <sup>14</sup>C dates near expected
+-   More dates showed divergence
+-   Who was right, the archaeologists or the physicists?
+:::
+::::
+
+## Dendrochronological evidence
+
+<img src="figures/crossdating.jpg" height="400" width="600"/>
+
+Also macrofossils in varved lakes
+
+Corals dates with <sup>14</sup>C and U/Th dating
+
+<!-- ??? -->
+
+<!-- https://www.geo.uzh.ch/microsite/alpecole/static/course/lessons/28/28c.htm -->
+
+## Calibration Curves
+
+:::: columns
+::: {.column width = "40%"}
+
+-   IntCal20: Northern hemisphere
+-   SHCal20: Southern hemisphere
+-   Marine20: Marine
+
+0--55000 yr BP
+:::
+
+::: {.column width = "60%"}
+
+```{r}
+#| label: cal_curve
+#| fig-height: 7.5
+#| fig-width: 7.5
+#| message: false
+
+intcal <- bind_rows(
+  intcal20 = ccurve("IntCal20"),
+  marine20 = ccurve("Marine20"),
+  .id = "Curve")
+
+intcal2 <- bind_rows(
+  `1` = intcal,
+  `2` = intcal |> mutate(V3 = V3 * 2),
+  .id = "sd"
+) |>
+  arrange(desc(sd))
+main <- intcal2 |>
+  filter(V1 <= 13000) |>
+ggplot(aes(x = V1, y = V2, ymin = V2 - V3, ymax = V2 + V3, fill = Curve, alpha = sd)) +
+  geom_ribbon(show.legend = FALSE) +
+#  coord_equal() +
+  scale_alpha_manual(values = c(1, .3)) +
+  scale_fill_brewer(palette = "Set1") +
+  scale_x_reverse() +
+  labs(x = "Years cal BP",
+       y = expression(phantom(0)^{14}*C~years~BP))
+
+zoom1 <- main +
+  filter(intcal2, between(V1, 2000, 3000)) +
+  scale_x_reverse(n.breaks = 3)
+
+zoom2 <- zoom1 +
+  filter(intcal2, between(V1, 20000, 21000))
+
+main +
+  plot_layout(
+    widths = c(.6, .4),
+    guides = "collect"
+    ) +
+  plot_annotation(
+    title = "<span style = 'color:#E41A1C;'>IntCal20</span>
+and <span style = 'color:#377EB8;'>Marine20</span> Calibration Curves",
+    theme = theme(plot.title = element_markdown())
+)
+```
+
+:::
+::::
+---
+
+```{r calcurve-zoom, fig.width = 8.5}
+
+zoom1 + zoom2 +
+  plot_annotation(
+    title = "<span style = 'color:#E41A1C;'>IntCal20</span>  and <span style = 'color:#377EB8;'>Marine20</span> Calibration Curves",
+    theme = theme(plot.title = element_markdown())
+  )
+```
+
+## Why does atmospheric <sup>14</sup>C vary? 1
+
+Variable production
+
+-   <sup>14</sup>C is produced by cosmic radiation
+-   Cosmic radiation is high energy charged particles
+-   Magnetic fields deflect charged particles, shielding objects behind them
+-   Variations in the sun's or the earth's magnetic field changes the amount of shielding, and the production rate of <sup>14</sup>C
+
+## [The Changing Sun]{style="color: white"} {background-image="figures/goalsSunYohkoh.jpg"}
+
+::: {.rounded-div .fragment}
+X-ray images of the sun over half a sunspot cycle (1991-1995)
+:::
+
+```{r sunspots, dev.args = list(bg = 'transparent'), fig.height = 5.5, fig.width = 10.5, message=FALSE}
+
+sunspots <- read_delim("data/SN_y_tot_V2.0.csv",
+  delim = ";",
+  col_names = c("year", "sunspots", "sd", "n", "prov")
+) |> 
+  mutate(
+    sunspots = str_trim(sunspots),
+    sunspots = as.numeric(sunspots)
+  )
+
+sunspot_plot <- ggplot(sunspots, aes(x = year, y = sunspots)) +
+  geom_line(colour = "white") +
+  labs(x = "Year CE", y = "Number of Sunspots") +
+  theme(
+    panel.background = element_rect(fill = "transparent"), # bg of the panel
+    plot.background = element_rect(fill = "transparent", color = NA), # bg of the plot
+    axis.line = element_line(colour = "white"),
+    axis.text = element_text(colour = "white"),
+    axis.title = element_text(colour = "white"),
+    panel.grid = element_blank()
+  )
+
+(plot_spacer() + sunspot_plot) & theme(
+  plot.background = element_rect(fill = "transparent", color = NA)
+)
+
+```
+
+<!-- ??? -->
+
+<!-- Sunspot data from http://www.sidc.be/silso/dayssnplot -->
+
+## Why does atmospheric <sup>14</sup>C vary? 2
+
+Carbon cycle changes
+
+-   Change distribution of <sup>14</sup>C in the biosphere
+    -   rate of ocean turnover
+    -   global vegetation changes
+
+## Radiocarbon calibration
+
+Convert radiocarbon dates to calibrated dates
+
+::::: columns
+::: column
+<img src="figures/oxcal-calibration.png"/>
+:::
+
+::: column
+-   Oxcal
+-   Bchron
+-   rbacon
+:::
+:::::
+
+## Dating sediment \< 150 years old {background-image="figures/mushroom_cloud.jpg" background-size="contain" background-position="right"}
+
+Period of massive human impact\
+on the environment
+
+-   acid rain
+-   eutrophication
+-   climate change
+
+Methods
+
+-   Nuclear bomb-derived <sup>14</sup>C
+-   <sup>210</sup>Pb
+-   Fallout isotopes
+
+## Postbomb-calibration curve
+
+:::: columns
+::: column
+```{r}
+#| label: post-bomb
+#| fig-height: 5
+#| fig-width: 5
+#| fig-cap: Hua et al (2013) Radiocarbon
+#| fig-alt: Line graph showing Northern Hemisphere Post-bomb 14C curve. Curve rises rapidly after 1955, peaking ~ 1963 and then declining exponentially towards the initial level.
+#| 
+
+pb <- readxl::read_excel(
+  "data/16177-21074-1-SP.xls", sheet = "NH zone 1",
+  skip = 5, col_names = c("Year", "Delta14C", "Delta13C_err", "F14C", "F14C_err"))
+
+pb  |>  ggplot(aes(x = Year, y = F14C, ymax = F14C + F14C_err, ymin = F14C - F14C_err)) +
+  geom_ribbon(alpha = 0.3) +
+  geom_line() +
+  scale_y_continuous(breaks = seq(1, 2, length = 6)) +
+  labs(x = "Year CE", y = expression(F^{14}*C), title = "Northern Hemisphere Post-Bomb 14C")
+```
+:::
+
+::: column
+Why did the curve rise?
+
+Why did it decline?
+:::
+::::
+
+## Lead-210 dating
+
+-   <sup>210</sup>Pb is part of the <sup>238</sup>U decay chain
+-   half-life of 22 years
+-   Useful for last \~100 years
+-   Aquatic sediments
+
+## Sources of ^210^Pb in sediment
+
+Supported vs. [unsupported]{style="color: blue"} ^210^Pb
+
+::: r-stack
+![](figures/lead210-1.webp)
+
+![](figures/lead210-2.webp){.fragment}
+
+![](figures/lead210-3.webp){.fragment}
+
+![](figures/lead210-4.webp){.fragment}
+
+![](figures/lead210-5.webp){.fragment}
+:::
+
+## Simple model
+
+Constant flux:constant sedimentation rate 
+
+Øvre Neådalsvatn, Norway
+ 
+:::: columns
+::: {.column width="60%"}
+![](figures/cf-cs.png)
+:::
+::: {.column width="40%"}
+
+![](figures/cf-cs2.png){height=500}
+:::
+::::
+
+## More complex models
+
+
+:::: columns
+::: column
+![](figures/crs1.png){height=500}
+:::
+::: column
+More complex models with different assumptions available
+
+- CRS – constant rate of supply of ^210^Pb
+- CIC – ^210^Pb initial concentration is constant
+
+
+Gossenköllesee, Austria
+:::
+::::
+
+## Validation {.smaller}
+
+Different models, different dates - use independent dates to validate chronology
+
+- ^137^Cs	- Atmospheric nuclear bomb test  & Chernobyl  - 1986 	
+- ^241^Am	Atmospheric nuclear bomb test - peak 1963
+
+:::: columns
+::: column
+![](figures/crs1.png){height=400}
+:::
+::: column
+![](figures/crs3.png){height=400}
+:::
+::::
+
+## Tephra - correlation between sites
+
+![](figures/vesuvius.jpg){.absolute left=0 top=60}
+
+![](figures/new-zealand.jpg){.absolute left=350 top=150}
+
+![](figures/santorini.jpg){.absolute bottom=0 right=0}
+
+
+## Finding tephra {.smaller}
+
+:::: columns
+
+::: column
+![](figures/sak.jpg)
+Saksunarvatn Ash, Faroe Islands
+
+![](figures/sak2.png)
+Saksunarvatn ash, Dallican Water, Shetland
+:::
+:::column
+![](figures/vedde.jpg)
+Vedde Ash Bed, Kvaltjern, Sotra
+:::
+::::
+
+## Identifying tephra
+
+:::: columns
+::: {.column width="40%"}
+- colour
+- morphology
+- geochemistry
+:::
+::: {.column width="60%"}
+![](figures/ternary.svg){height=600}
+:::
+::::
+
+## Vedde Ash
+
+Icelandic tephra (? Katla Volcano)
+
+Middle of Younger Dryas 
+
+- Greenland ice – GRIP ice core 11980 ± 80 yr BP 
+
+- lake cores Kråkenes 10310 ± 50 ^14^C yr BP\
+		calibrated 12140 ± 200 cal yr BP
+- marine cores
+	Norwegian coast 10920 ± 24 ^14^C yr BP
+
+Reservoir correction 610 ± 55 yr
+
+Larger than modern 
+
+## What else can we date?
+
+<!-- Page for each with background photo and cartoon explanation of mechanism -->
+
+-   Speleothem & Corals - U/Th
+-   Sand dunes - luminesence dating - last exposure to sunlight
+-   Exposure dating - cosmogenic radioisotopes
+-   Lava - Ar-Ar dating
+-   Shells & bones - amino acid racemisation
+
+## Conclusions {.smaller}
+
++------------+----------------+----------------------------------------------------------------+-----------------------------------------+
+| Method     | Age range      | \+                                                             | \-                                      |
++============+================+================================================================+=========================================+
+| Varves     | 100--20000     | -   high-precision                                             | -   missing varves                      |
+|            |                |                                                                |                                         |
+|            |                |                                                                | -   few varved records                  |
++------------+----------------+----------------------------------------------------------------+-----------------------------------------+
+| ^14^C      | 0--50000       | -   possible on most lake sediments                            | -   reservoir corrections               |
+|            |                |                                                                |                                         |
+|            |                |                                                                | -   calibration                         |
++------------+----------------+----------------------------------------------------------------+-----------------------------------------+
+| ^210^Pb    | \<150          | -   high-precision for recent sediments                        | -   models need validating (with 137Cs) |
++------------+----------------+----------------------------------------------------------------+-----------------------------------------+
+| Tephra     | Any            | -   high-precision correlations between different environments | -   not always available                |
++------------+----------------+----------------------------------------------------------------+-----------------------------------------+
+
+## Reading {.smaller}
+
+**Varves:** Zolitschka et al (2015) Varves in lake sediments - a review.
+[Quat. Sci. Rev. 117, 1–41](https://doi.org/10.1016/j.quascirev.2015.03.019)
+
+**Radiocarbon:** Reimer et al (2020) The IntCal20 Northern Hemisphere Radiocarbon Age Calibration Curve (0–55 cal kBP) [Radiocarbon 62, 725-757](https://doi.org/10.1017/RDC.2020.41)
+
+**Age depth models:** Trachsel and Telford (2017) All age–depth models are wrong, but are getting better.
+[Holocene 27, 860–869](https://doi.org/10.1177/0959683616675939)
+
+^**210**^**Pb dating:** Appleby (2008) Three decades of dating recent sediments by fallout radionuclides: a review.
+[Holocene 18, 83–93](https://doi.org/10.1177/0959683607085598)
+
+**Cryptotephra:** Davis (2015) Cryptotephras: the revolution in correlation and precision dating.
+[J. Quat. Sci. 30, 114–130.](https://doi.org/10.1002/jqs.2766)

@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="bio250-dating_files/libs/clipboard/clipboard.min.js"></script>
+<script src="bio250-dating_files/libs/quarto-html/tabby.min.js"></script>
+<script src="bio250-dating_files/libs/quarto-html/popper.min.js"></script>
+<script src="bio250-dating_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="bio250-dating_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="bio250-dating_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="bio250-dating_files/libs/quarto-html/quarto-syntax-highlighting-bd0f20613ab34a035844aaae9062fb4e.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.20">
+
+  <meta name="author" content="Richard J. Telford">
+  <meta name="dcterms.date" content="2025-10-29">
+  <title>Dating the Quaternary</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="bio250-dating_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="bio250-dating_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="bio250-dating_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="bio250-dating_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="bio250-dating_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="bio250-dating_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="bio250-dating_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="bio250-dating_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="bio250-dating_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Dating the Quaternary</h1>
+  <p class="subtitle">Bio250</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Richard J. Telford 
+</div>
+</div>
+</div>
+
+  <p class="date">29 October 2025</p>
+</section>
+<section id="why-date" class="slide level2" data-background-image="/figures/pollen-strat.jpg" data-background-size="contain">
+<h2>Why date?</h2>
+<div class="columns">
+<div class="column fragment">
+<div class="rounded-div">
+<p>Without dates:</p>
+<ul>
+<li>Things changed</li>
+<li>Order of events</li>
+</ul>
+</div>
+</div><div class="column fragment">
+<div class="rounded-div">
+<p>With dates:</p>
+<ul>
+<li>When?</li>
+<li>How fast?</li>
+<li>What happened at the same time?</li>
+<li>Hypothesis testing</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<p>Absolute chronology is the basis for all comparison and correlation of Holocene proxy records.</p>
+<p>Avoid visual ‘curve-matching’</p>
+<ul>
+<li><p>‘reinforcement syndrome’</p></li>
+<li><p>‘suck-in and smear’</p></li>
+<li><p>Mostly <sup>14</sup>C dating and <sup>210</sup>Pb dating.</p></li>
+<li><p>Tephras increasingly important.</p></li>
+<li><p>Holocene-length annually laminated sediments rare.</p></li>
+</ul>
+</section>
+<section id="types-of-chronologies" class="slide level2">
+<h2>Types of chronologies</h2>
+<p>Relative vs Absolute</p>
+<ul>
+<li><p>Incremental</p>
+<ul>
+<li>Varved sediments</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Radiometric</p>
+<ul>
+<li>Radiocarbon</li>
+<li>Lead-210</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Stratigraphic</p>
+<ul>
+<li>Tephra layers</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="varved-lake-sediments" class="slide level2" data-background-image="/figures/de_geer.jpeg">
+<h2><span style="color: white">Varved Lake Sediments</span></h2>
+<div class="rounded-div narrow fragment">
+<ul>
+<li>How are they formed &amp; preserved?</li>
+<li>What types of lakes have varved sediments?</li>
+<li>Techniques</li>
+<li>Can they be proved to be annual?</li>
+</ul>
+</div>
+</section>
+<section id="varve-formation-and-preservation" class="slide level2" data-background-image="figures/geol_deglac8.jpg">
+<h2>Varve formation and preservation</h2>
+<div class="indent-div">
+<p>1 Seasonal variation in the type of sediment deposited</p>
+<ul>
+<li>grain size in pro-glacial lake</li>
+<li>biological remains</li>
+<li>calcite</li>
+</ul>
+<p>2 Sediment water interface undisturbed</p>
+<ul>
+<li>by waves &amp; currents</li>
+<li>by bioturbation</li>
+<li>by slumping</li>
+</ul>
+</div>
+</section>
+<section id="sagtjennet-norway" class="slide level2" data-background-image="figures/Sagtjennet_organic-macro.jpg">
+<h2><span style="color: white;">Sagtjennet, Norway</span></h2>
+<!-- ??? -->
+<!-- http://www.pages.unibe.ch/download/docs/meeting-products/abstracts/VWG_AbstractVolume_Final_2012.pdf -->
+</section>
+<section id="lake-characteristics" class="slide level2">
+<h2>Lake Characteristics</h2>
+
+<img src="figures/varves-morpho.png" class="r-stretch"></section>
+<section id="varves-in-marine-environments" class="slide level2">
+<h2>Varves in Marine Environments</h2>
+<div class="columns">
+<div class="column">
+<p>Common in enclosed marginal seas</p>
+<ul>
+<li>Saanich Inlet, British Columbia</li>
+<li>Baltic Sea</li>
+<li>Black Sea</li>
+<li>Cariaco Basin</li>
+<li>Also under up-welling zones</li>
+</ul>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/Cariaco-Basin-grayscale-for-the-last-deglaciation-plotted-versus-old-and-newly-revised_W640.jpg" width="320"></p>
+<figcaption>Cariaco Basin greyscale for the deglaciation. Hugen et al 2004</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Why not in most of the ocean?</p>
+</div></div>
+</section>
+<section id="techniques" class="slide level2">
+<h2>Techniques</h2>
+<p>Coring – need continuous sequence</p>
+<p>Frozen finger to sample sediment water interface</p>
+<p>Embed in epoxy resin to make thin sections</p>
+<!-- background-image: url("figures/bald-core.jpg") -->
+<!-- background-position: right -->
+<!-- ## Evidence that Varves are Annual -->
+</section>
+<section id="evidence-that-varves-are-annual" class="slide level2" data-background-image="figures/microstratigraphy.jpg" data-background-size="contain" data-background-position="right">
+<h2>Evidence that varves are annual</h2>
+<p>Radiometric dates</p>
+<p>Pollen</p>
+<p>Microstratigraphy</p>
+</section>
+<section id="baldeggersee-switzerland" class="slide level2" data-background-image="figures/bald-core.jpg" data-background-size="contain" data-background-position="right">
+<h2>Baldeggersee, Switzerland</h2>
+<p>Hypertrophic lake</p>
+<p>Cored with freeze-corer</p>
+<p>Diatoms counted at<br>
+annual resolution</p>
+</section>
+<section id="baldeggersee-switzerland-1" class="slide level2" data-background-image="figures/bald-diatoms.png" data-background-size="contain">
+<h2>Baldeggersee, Switzerland</h2>
+</section>
+<section>
+<section id="radiocarbon-dating" class="title-slide slide level1 center">
+<h1>Radiocarbon Dating</h1>
+
+</section>
+<section id="c-principles" class="slide level2">
+<h2><sup>14</sup>C Principles</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img src="figures/Libby.jpg"></p>
+<p>Developed by Libby</p>
+</div><div class="column" style="width:60%;">
+<p>98.9% of carbon atoms have nucleus with 6 protons and 6 neutrons: <sup>12</sup>C</p>
+<p>1.1% have 6 protons, 7 neutrons: <sup>13</sup>C</p>
+<p><sup>12</sup>C &amp; <sup>13</sup>C are stable</p>
+<p><sup>14</sup>C: 1 in 10<sup>12</sup> atoms</p>
+<ul>
+<li>8 neutrons</li>
+<li>radioactive</li>
+<li>half-life of 5730 years</li>
+</ul>
+<p>Can date organics and carbonates</p>
+</div></div>
+<!-- Photo from -->
+<!-- https://enciklopedija.hr/natuknica.aspx?ID=36340 -->
+</section>
+<section id="origin-of-14c" class="slide level2">
+<h2>Origin of <sup>14</sup>C</h2>
+<ul>
+<li>Cosmic radiation hits upper atmosphere</li>
+<li>Nuclei broken into high-energy nucleotides</li>
+<li><sup>14</sup>C formed by exchange of p for n in Nitrogen atom</li>
+<li><sup>14</sup>C absorbed by biomass and moves through the food chain</li>
+</ul>
+<p>Everything is radioactive</p>
+</section>
+<section id="beta-decay-of-14c" class="slide level2">
+<h2>Beta decay of <sup>14</sup>C</h2>
+<p><span class="math inline">\(^{14}C \longrightarrow  {^{14}N} + β + \bar{v}_e\)</span></p>
+<p>β – Beta-particle – high energy electron</p>
+<p><span class="math inline">\(\bar{v}_e\)</span> electron antineutrino – very difficult to detect</p>
+<ul>
+<li><p>Random process</p></li>
+<li><p>Atom has 50% chance of decaying in one half-life</p></li>
+<li><p>Exponential decay</p></li>
+</ul>
+</section>
+<section id="measuring-14c" class="slide level2">
+<h2>Measuring <sup>14</sup>C</h2>
+<p>1 Count the disintegrations</p>
+<ul>
+<li>Detect β particles</li>
+<li>Radiometric or bulk date</li>
+<li>Needs 1 g carbon</li>
+</ul>
+<p>2 Count the atoms</p>
+<ul>
+<li>Accelerated Mass Spectrometer</li>
+<li>Needs 1 mg carbon</li>
+<li>Can date specific sediment fractions</li>
+</ul>
+</section>
+<section id="calculating-14c-age" class="slide level2">
+<h2>Calculating <sup>14</sup>C Age</h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="bio250-dating_files/figure-revealjs/halflives-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(\frac{dA}{dt} = -\lambda A\)</span></p>
+<p><span class="math inline">\(A = A_{initial}e^{-\lambda t}\)</span></p>
+<p><span class="math inline">\(\lambda = \frac{ln(2)}{halflife}\)</span></p>
+</div><div class="column">
+<p><span class="math inline">\(A = A_{initial}e^{-ln(2)\frac{age}{halflife}}\)</span></p>
+<p><span class="math inline">\(ln(\frac{A}{A_{initial}})=-ln(2)\frac{age}{halflife}\)</span></p>
+<p><span class="math inline">\(age = -ln(\frac{A}{A_{initial}})\frac{halflife}{ln(2)}\)</span></p>
+<p>Use Libby halflife 5568</p>
+<p><span class="math inline">\(age = -8033 ln(\frac{A}{A_{initial}})\)</span></p>
+<p>assume <span class="math inline">\(A_{initial} = A_{modern}\)</span></p>
+<p><span class="math inline">\(age= -8033 ln(\frac{A}{A_{modern}})\)</span></p>
+</div></div>
+</section>
+<section id="assumptions" class="slide level2">
+<h2>Assumptions</h2>
+<p>1 No contamination</p>
+<div class="columns">
+<div class="column">
+<ul>
+<li>rootlets</li>
+<li>recrystallisation</li>
+</ul>
+</div><div class="column">
+<ul>
+<li>bioturbation</li>
+<li>coal &amp; peat</li>
+</ul>
+</div></div>
+<p>2 <sup>14</sup>C in organism is in equilibrium with atmosphere at death</p>
+<ul>
+<li>fractionation</li>
+<li>marine reservoir effect</li>
+<li>hardwater error</li>
+</ul>
+<p>3 Atmospheric <sup>14</sup>C concentration is constant</p>
+</section>
+<section id="isotopic-fractionation" class="slide level2">
+<h2>Isotopic fractionation</h2>
+<div class="columns">
+<div class="column">
+<p><sup>14</sup>C is heavier &amp; slower than <sup>12</sup>C</p>
+<ul>
+<li><p>discriminated against by photosynthesis</p></li>
+<li><p><sup>13</sup>C also discriminated against</p></li>
+<li><p>normalise to <span class="math inline">\(\delta ^{13}C = -25 ‰\)</span></p></li>
+<li><p>16 yr offset per 1 ‰</p></li>
+</ul>
+</div><div class="column">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Material</th>
+<th><span class="math inline">\(\delta ^{13}C ‰\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Marine shells</td>
+<td>+1 ± 2</td>
+</tr>
+<tr class="even">
+<td>Speleothems</td>
+<td>-9 ± 3</td>
+</tr>
+<tr class="odd">
+<td>C-4 plants</td>
+<td>-10 ± 2</td>
+</tr>
+<tr class="even">
+<td>Marine organics</td>
+<td>-15 ± 3</td>
+</tr>
+<tr class="odd">
+<td>Submerged freshwater plants</td>
+<td>-16 ± 4</td>
+</tr>
+<tr class="even">
+<td>C3 plants, wood</td>
+<td>-25 ± 3</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="marine-reservoir-effect" class="slide level2">
+<h2>Marine reservoir effect</h2>
+<ul>
+<li>Ocean contains lots of C</li>
+<li>Exchange with atmosphere is slow</li>
+<li><sup>14</sup>C decays before exchange</li>
+<li>→Average apparent age of marine organisms 400 yr too old</li>
+</ul>
+</section>
+<section id="what-is-the-14c-age-of-these-sheep" class="slide level2" data-background-image="figures/Lofotlam_sau_spiser_tang_Røst_lofoten.jpg">
+<h2><span style="color: white">What is the <sup>14</sup>C age of these sheep?</span></h2>
+<div class="rounded-div fragment narrow">
+<p>How could you tell that the dates were problematic?</p>
+</div>
+</section>
+<section id="marine-reservoir-effect-varies-in-space" class="slide level2">
+<h2>Marine reservoir effect varies in space</h2>
+<p><span class="math inline">\(\Delta R\)</span> - offset from typical reservoir age <a href="http://calib.org/marine/" class="uri">http://calib.org/marine/</a></p>
+
+<img data-src="bio250-dating_files/figure-revealjs/delta-14C-map-1.png" width="1440" class="r-stretch"></section>
+<section id="and-varies-in-time" class="slide level2">
+<h2>And varies in time</h2>
+<div class="columns">
+<div class="column">
+<p><img src="figures/bondevik_2006_core.png"></p>
+<ul>
+<li><p>Marine and terrestrial macrofossils in same core</p></li>
+<li><p>Difference between marine &amp; terrestrial <sup>14</sup>C dates varies</p></li>
+</ul>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/Bondevik_2006_results2.jpg" width="400" height="550"></p>
+<figcaption><a href="https://science.sciencemag.org/content/312/5779/1514">Bondevik et al (2006) Science</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="hard-water-error" class="slide level2">
+<h2>Hard-water error</h2>
+<ul>
+<li>Catchment carbonates (e.g.&nbsp;chalk, limestone) dissolve</li>
+<li>Rock is millions of years old - no <sup>14</sup>C</li>
+<li>Aquatic plants photosynthesise using “old” carbon</li>
+<li>Apparent age older than true age</li>
+<li>Solve by dating terrestrial macrofossils or pollen</li>
+</ul>
+</section>
+<section id="is-atmospheric-14c-concentration-constant" class="slide level2">
+<h2>Is atmospheric <sup>14</sup>C concentration constant?</h2>
+<div class="columns">
+<div class="column">
+<p><img src="figures/Curve_knowns.gif"></p>
+<p>“Curve of Knowns” Libby and Arnold (1949)</p>
+</div><div class="column">
+<ul>
+<li>First <sup>14</sup>C dates near expected</li>
+<li>More dates showed divergence</li>
+<li>Who was right, the archaeologists or the physicists?</li>
+</ul>
+</div></div>
+</section>
+<section id="dendrochronological-evidence" class="slide level2">
+<h2>Dendrochronological evidence</h2>
+<p><img src="figures/crossdating.jpg" height="400" width="600"></p>
+<p>Also macrofossils in varved lakes</p>
+<p>Corals dates with <sup>14</sup>C and U/Th dating</p>
+<!-- ??? -->
+<!-- https://www.geo.uzh.ch/microsite/alpecole/static/course/lessons/28/28c.htm -->
+</section>
+<section id="calibration-curves" class="slide level2">
+<h2>Calibration Curves</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>IntCal20: Northern hemisphere</li>
+<li>SHCal20: Southern hemisphere</li>
+<li>Marine20: Marine</li>
+</ul>
+<p>0–55000 yr BP</p>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="bio250-dating_files/figure-revealjs/cal_curve-1.png" width="720"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="bio250-dating_files/figure-revealjs/calcurve-zoom-1.png" width="816" class="r-stretch"></section>
+<section id="why-does-atmospheric-14c-vary-1" class="slide level2">
+<h2>Why does atmospheric <sup>14</sup>C vary? 1</h2>
+<p>Variable production</p>
+<ul>
+<li><sup>14</sup>C is produced by cosmic radiation</li>
+<li>Cosmic radiation is high energy charged particles</li>
+<li>Magnetic fields deflect charged particles, shielding objects behind them</li>
+<li>Variations in the sun’s or the earth’s magnetic field changes the amount of shielding, and the production rate of <sup>14</sup>C</li>
+</ul>
+</section>
+<section id="the-changing-sun" class="slide level2" data-background-image="figures/goalsSunYohkoh.jpg">
+<h2><span style="color: white">The Changing Sun</span></h2>
+<div class="rounded-div fragment">
+<p>X-ray images of the sun over half a sunspot cycle (1991-1995)</p>
+</div>
+
+<!-- ??? -->
+<!-- Sunspot data from http://www.sidc.be/silso/dayssnplot -->
+<img data-src="bio250-dating_files/figure-revealjs/sunspots-1.png" width="1008" class="r-stretch"></section>
+<section id="why-does-atmospheric-14c-vary-2" class="slide level2">
+<h2>Why does atmospheric <sup>14</sup>C vary? 2</h2>
+<p>Carbon cycle changes</p>
+<ul>
+<li>Change distribution of <sup>14</sup>C in the biosphere
+<ul>
+<li>rate of ocean turnover</li>
+<li>global vegetation changes</li>
+</ul></li>
+</ul>
+</section>
+<section id="radiocarbon-calibration" class="slide level2">
+<h2>Radiocarbon calibration</h2>
+<p>Convert radiocarbon dates to calibrated dates</p>
+<div class="columns">
+<div class="column">
+<p><img src="figures/oxcal-calibration.png"></p>
+</div><div class="column">
+<ul>
+<li>Oxcal</li>
+<li>Bchron</li>
+<li>rbacon</li>
+</ul>
+</div></div>
+</section>
+<section id="dating-sediment-150-years-old" class="slide level2" data-background-image="figures/mushroom_cloud.jpg" data-background-size="contain" data-background-position="right">
+<h2>Dating sediment &lt; 150 years old</h2>
+<p>Period of massive human impact<br>
+on the environment</p>
+<ul>
+<li>acid rain</li>
+<li>eutrophication</li>
+<li>climate change</li>
+</ul>
+<p>Methods</p>
+<ul>
+<li>Nuclear bomb-derived <sup>14</sup>C</li>
+<li><sup>210</sup>Pb</li>
+<li>Fallout isotopes</li>
+</ul>
+</section>
+<section id="postbomb-calibration-curve" class="slide level2">
+<h2>Postbomb-calibration curve</h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="bio250-dating_files/figure-revealjs/post-bomb-1.png" alt="Line graph showing Northern Hemisphere Post-bomb 14C curve. Curve rises rapidly after 1955, peaking ~ 1963 and then declining exponentially towards the initial level." width="480"></p>
+<figcaption>Hua et al (2013) Radiocarbon</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<p>Why did the curve rise?</p>
+<p>Why did it decline?</p>
+</div></div>
+</section>
+<section id="lead-210-dating" class="slide level2">
+<h2>Lead-210 dating</h2>
+<ul>
+<li><sup>210</sup>Pb is part of the <sup>238</sup>U decay chain</li>
+<li>half-life of 22 years</li>
+<li>Useful for last ~100 years</li>
+<li>Aquatic sediments</li>
+</ul>
+</section>
+<section id="sources-of-210pb-in-sediment" class="slide level2">
+<h2>Sources of <sup>210</sup>Pb in sediment</h2>
+<p>Supported vs.&nbsp;<span style="color: blue">unsupported</span> <sup>210</sup>Pb</p>
+<div class="r-stack">
+<p><img data-src="figures/lead210-1.webp"></p>
+<p><img data-src="figures/lead210-2.webp" class="fragment"></p>
+<p><img data-src="figures/lead210-3.webp" class="fragment"></p>
+<p><img data-src="figures/lead210-4.webp" class="fragment"></p>
+<p><img data-src="figures/lead210-5.webp" class="fragment"></p>
+</div>
+</section>
+<section id="simple-model" class="slide level2">
+<h2>Simple model</h2>
+<p>Constant flux:constant sedimentation rate</p>
+<p>Øvre Neådalsvatn, Norway</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="figures/cf-cs.png"></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/cf-cs2.png" height="500"></p>
+</div></div>
+</section>
+<section id="more-complex-models" class="slide level2">
+<h2>More complex models</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="figures/crs1.png" height="500"></p>
+</div><div class="column">
+<p>More complex models with different assumptions available</p>
+<ul>
+<li>CRS – constant rate of supply of <sup>210</sup>Pb</li>
+<li>CIC – <sup>210</sup>Pb initial concentration is constant</li>
+</ul>
+<p>Gossenköllesee, Austria</p>
+</div></div>
+</section>
+<section id="validation" class="slide level2 smaller">
+<h2>Validation</h2>
+<p>Different models, different dates - use independent dates to validate chronology</p>
+<ul>
+<li><sup>137</sup>Cs - Atmospheric nuclear bomb test &amp; Chernobyl - 1986<br>
+</li>
+<li><sup>241</sup>Am Atmospheric nuclear bomb test - peak 1963</li>
+</ul>
+<div class="columns">
+<div class="column">
+<p><img data-src="figures/crs1.png" height="400"></p>
+</div><div class="column">
+<p><img data-src="figures/crs3.png" height="400"></p>
+</div></div>
+</section>
+<section id="tephra---correlation-between-sites" class="slide level2">
+<h2>Tephra - correlation between sites</h2>
+<p><img data-src="figures/vesuvius.jpg" class="absolute" style="top: 60px; left: 0px; "></p>
+<p><img data-src="figures/new-zealand.jpg" class="absolute" style="top: 150px; left: 350px; "></p>
+<p><img data-src="figures/santorini.jpg" class="absolute" style="bottom: 0px; right: 0px; "></p>
+</section>
+<section id="finding-tephra" class="slide level2 smaller">
+<h2>Finding tephra</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="figures/sak.jpg"> Saksunarvatn Ash, Faroe Islands</p>
+<p><img data-src="figures/sak2.png"> Saksunarvatn ash, Dallican Water, Shetland</p>
+</div><div class="column">
+<p><img data-src="figures/vedde.jpg"> Vedde Ash Bed, Kvaltjern, Sotra</p>
+</div></div>
+</section>
+<section id="identifying-tephra" class="slide level2">
+<h2>Identifying tephra</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>colour</li>
+<li>morphology</li>
+<li>geochemistry</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="figures/ternary.svg" height="600"></p>
+</div></div>
+</section>
+<section id="vedde-ash" class="slide level2">
+<h2>Vedde Ash</h2>
+<p>Icelandic tephra (? Katla Volcano)</p>
+<p>Middle of Younger Dryas</p>
+<ul>
+<li><p>Greenland ice – GRIP ice core 11980 ± 80 yr BP</p></li>
+<li><p>lake cores Kråkenes 10310 ± 50 <sup>14</sup>C yr BP<br>
+calibrated 12140 ± 200 cal yr BP</p></li>
+<li><p>marine cores Norwegian coast 10920 ± 24 <sup>14</sup>C yr BP</p></li>
+</ul>
+<p>Reservoir correction 610 ± 55 yr</p>
+<p>Larger than modern</p>
+</section>
+<section id="what-else-can-we-date" class="slide level2">
+<h2>What else can we date?</h2>
+<!-- Page for each with background photo and cartoon explanation of mechanism -->
+<ul>
+<li>Speleothem &amp; Corals - U/Th</li>
+<li>Sand dunes - luminesence dating - last exposure to sunlight</li>
+<li>Exposure dating - cosmogenic radioisotopes</li>
+<li>Lava - Ar-Ar dating</li>
+<li>Shells &amp; bones - amino acid racemisation</li>
+</ul>
+</section>
+<section id="conclusions" class="slide level2 smaller">
+<h2>Conclusions</h2>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 46%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Age range</th>
+<th>+</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Varves</td>
+<td>100–20000</td>
+<td><ul>
+<li>high-precision</li>
+</ul></td>
+<td><ul>
+<li><p>missing varves</p></li>
+<li><p>few varved records</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><sup>14</sup>C</td>
+<td>0–50000</td>
+<td><ul>
+<li>possible on most lake sediments</li>
+</ul></td>
+<td><ul>
+<li><p>reservoir corrections</p></li>
+<li><p>calibration</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td><sup>210</sup>Pb</td>
+<td>&lt;150</td>
+<td><ul>
+<li>high-precision for recent sediments</li>
+</ul></td>
+<td><ul>
+<li>models need validating (with 137Cs)</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Tephra</td>
+<td>Any</td>
+<td><ul>
+<li>high-precision correlations between different environments</li>
+</ul></td>
+<td><ul>
+<li>not always available</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reading" class="slide level2 smaller">
+<h2>Reading</h2>
+<p><strong>Varves:</strong> Zolitschka et al (2015) Varves in lake sediments - a review. <a href="https://doi.org/10.1016/j.quascirev.2015.03.019">Quat. Sci. Rev.&nbsp;117, 1–41</a></p>
+<p><strong>Radiocarbon:</strong> Reimer et al (2020) The IntCal20 Northern Hemisphere Radiocarbon Age Calibration Curve (0–55 cal kBP) <a href="https://doi.org/10.1017/RDC.2020.41">Radiocarbon 62, 725-757</a></p>
+<p><strong>Age depth models:</strong> Trachsel and Telford (2017) All age–depth models are wrong, but are getting better. <a href="https://doi.org/10.1177/0959683616675939">Holocene 27, 860–869</a></p>
+<p><sup><strong>210</strong></sup><strong>Pb dating:</strong> Appleby (2008) Three decades of dating recent sediments by fallout radionuclides: a review. <a href="https://doi.org/10.1177/0959683607085598">Holocene 18, 83–93</a></p>
+<p><strong>Cryptotephra:</strong> Davis (2015) Cryptotephras: the revolution in correlation and precision dating. <a href="https://doi.org/10.1002/jqs.2766">J. Quat. Sci. 30, 114–130.</a></p>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="bio250-dating_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="bio250-dating_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="bio250-dating_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="bio250-dating_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="bio250-dating_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="bio250-dating_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="bio250-dating_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="bio250-dating_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="bio250-dating_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="bio250-dating_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="bio250-dating_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

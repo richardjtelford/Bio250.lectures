@@ -1,0 +1,23 @@
+
+.rounded-div {
+  background-color: #007bff99; /* Sets the background color */
+    border-radius: 15px;      /* Sets the rounded corners */
+    padding: 15px;            /* Adds some internal spacing */
+    color: white;             /* Sets text color for contrast */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+}
+.narrow {
+  width: 500px;             /* Sets a width for the div */
+}
+
+.indent-div {
+ margin-left: 120px; /* Shifts the entire paragraph 30 pixels to the right */ shadow */
+}
+
+
+h2 {
+  color: white;
+  background: #007bff99;
+  border-radius: 15px;
+  padding: 5px;"
+  }
