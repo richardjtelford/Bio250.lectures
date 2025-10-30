@@ -12,7 +12,7 @@ format:
     self_contained: true
 ---
 
-## Why date? {background-image="/figures/pollen-strat.jpg" background-size="contain"}
+## Why date? {background-image="figures/pollen-strat.jpg" background-size="contain"}
 
 ```{r setup}
 #| include: false
@@ -89,7 +89,7 @@ Relative vs Absolute
 
     -   Tephra layers
 
-## [Varved Lake Sediments]{style="color: white"} {background-image="/figures/de_geer.jpeg"}
+## [Varved Lake Sediments]{style="color: white"} {background-image="figures/de_geer.jpeg"}
 
 ::: {.rounded-div .narrow .fragment}
 -   How are they formed & preserved?
